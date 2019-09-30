@@ -1,10 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace JExtensions
+namespace JCommon
 {
+    /// <summary>
+    /// Restrict the call to a function in milliseconds, using this class. This class is useful when you want to prevent a button.
+    /// </summary>
     public class CDManager
     {
+        /// <summary>
+        /// Default cooldown
+        /// </summary>
+        public static float DefaultCd = 0.2f;
         private static object s_Sync = new object();
         static volatile CDManager s_Instance;
         public static CDManager Instance
@@ -26,13 +33,74 @@ namespace JExtensions
         }
 
         Dictionary<string, float> AllCds = new Dictionary<string, float>();
-        public static bool IsCD(float CoolDownSeconds, [CallerMemberName] string callerName = "")
+
+        static string GetKey(params string[] data)
         {
-            return Instance.IsCoolDown(CoolDownSeconds, callerName);
+            return Extensions.ExtendedString.Join("_", data);
         }
 
-        public bool IsCoolDown(float CoolDownSeconds, [CallerMemberName] string callerName = "")
+        /// <summary>
+        /// Uses [CallerMemberName] and [CallerFilePath] attributes to generate a Key that is used to restrict the call to a function. DefaultCD field is used.
+        /// </summary>
+        /// <param name="caller"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static bool IsCoolingDown([CallerMemberName] string caller = "", [CallerFilePath] string path = "")
         {
+            return Instance.IsCoolDown(DefaultCd, GetKey(caller, path));
+        }
+
+        /// <summary>
+        /// Define your own key to restrict the call to your function. DefaultCD field is used.
+        /// </summary>
+        /// <param name="Key"></param>
+        /// <returns></returns>
+        public static bool IsCoolingDown(string Key)
+        {
+            return Instance.IsCoolDown(DefaultCd, Key);
+        }
+
+        public static bool IsCoolingDown(float CoolDownSeconds, string Key)
+        {
+            return Instance.IsCoolDown(CoolDownSeconds, Key);
+        }
+
+        public static bool IsCoolingDown(float CoolDownSeconds, [CallerMemberName] string caller = "", [CallerFilePath] string path = "")
+        {
+            return Instance.IsCoolDown(CoolDownSeconds, GetKey(caller, path));
+        }
+
+        /// <summary>
+        /// Releases the previews lock on key
+        /// </summary>
+        /// <param name="Key"></param>
+        /// <returns></returns>
+        public static bool RemoveCoolDown(string Key)
+        {
+           return  Instance.Remove(Key);
+        }
+
+        bool Remove(string callerName)
+        {
+            bool ret = false;
+            lock (AllCds)
+            {
+                if (AllCds.TryGetValue(callerName, out float value))
+                {
+                    ret = true;
+                    AllCds[callerName] = 0;
+                }
+                else
+                {
+                    ret = true;
+                    AllCds[callerName] = 0;
+                }
+            }
+            return ret;
+        }
+
+        bool IsCoolDown(float CoolDownSeconds, string callerName)
+        {        
             bool ret = false;
             lock (AllCds)
             {

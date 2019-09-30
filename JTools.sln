@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCommon", "JExtensions\JCommon.csproj", "{8F646345-1E41-47E0-B3E9-91D07F6ED810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCommon", "JCommon\JCommon.csproj", "{8F646345-1E41-47E0-B3E9-91D07F6ED810}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTcpNetwork", "JTcpNetwork\JTcpNetwork.csproj", "{D2A31C2F-5423-4127-B718-666D38C090A7}"
 	ProjectSection(ProjectDependencies) = postProject

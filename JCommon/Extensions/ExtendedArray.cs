@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JExtensions.Extensions
+namespace JCommon.Extensions
 {
     public static class ExtendedArray
     {
@@ -39,13 +39,13 @@ namespace JExtensions.Extensions
                 else
                 {
                     string s = string.Format("index out of range, index={0}, array.Length={1}", index.ToString(), length.ToString());
-                    UnityEngine.Debug.LogError(s);
+                    Log.Error(s);
                 }
             }
             else
             {
 
-                UnityEngine.Debug.LogError("array is null");
+                Log.Error("array is null");
             }
 
             return defaultValue;

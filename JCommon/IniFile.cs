@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
-namespace JExtensions
+namespace JCommon
 {
     public class IniFile
     {
@@ -11,7 +12,7 @@ namespace JExtensions
 
         public IniFile(string file)
         {
-            Reload(file);
+            Load(file);
         }
         
         public T GetValue<T>(string Key)
@@ -38,6 +39,11 @@ namespace JExtensions
             Properties[field] = value.ToString();
         }
 
+        public string[] GetKeys()
+        {
+            return Properties.Keys.ToArray();
+        }
+
         public void Save()
         {
             Save(filename);
@@ -47,10 +53,10 @@ namespace JExtensions
         {
             this.filename = filename;
 
-            if (!System.IO.File.Exists(filename))
-                System.IO.File.Create(filename);
+            if (!File.Exists(filename))
+                File.Create(filename);
 
-            System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+            StreamWriter file = new StreamWriter(filename);
 
             foreach (string prop in Properties.Keys.ToArray())
                 if (!string.IsNullOrWhiteSpace(Properties[prop]))
@@ -61,10 +67,10 @@ namespace JExtensions
 
         public void Reload()
         {
-            Reload(filename);
+            Load(filename);
         }
 
-        void Reload(string filename)
+        public void Load(string filename)
         {
             this.filename = filename;
             Properties = new SortedList<string, string>();
@@ -77,37 +83,41 @@ namespace JExtensions
 
         private void Parse(string file)
         {
-            try
-            {
-                string[] data = System.IO.File.ReadAllLines(file);
-                foreach (string line in data)
+            if(File.Exists(file))
+            { 
+                string[] data = File.ReadAllLines(file);
+                if (data.Length == 0)
+                    return;
+
+                for (int i = 0; i < data.Length; i++)
                 {
-                    if ((!string.IsNullOrEmpty(line)) &&
-                        (!line.StartsWith(";")) &&
-                        (!line.StartsWith("#")) &&
-                        (!line.StartsWith("'")) &&
-                        (line.Contains('=')))
+                    string line = data[i];
+                    if ((!string.IsNullOrEmpty(line)) 
+                        && (!line.StartsWith(";")) 
+                        && (!line.StartsWith("#")) 
+                        && (!line.StartsWith("'")) 
+                        && (line.Contains('=')))
                     {
-                        int index = line.IndexOf('=');
-                        string key = line.Substring(0, index).Trim();
-                        string value = line.Substring(index + 1).Trim();
-
-                        if ((value.StartsWith("\"") && value.EndsWith("\"")) ||
-                            (value.StartsWith("'") && value.EndsWith("'")))
-                        {
-                            value = value.Substring(1, value.Length - 2);
-                        }
-
                         try
                         {
-                            //ignore dublicates
-                            Properties.Add(key, value);
+                            int index = line.IndexOf('=');
+                            string key = line.Substring(0, index).Trim();
+                            string value = line.Substring(index + 1).Trim();
+
+                            if ((value.StartsWith("\"") && value.EndsWith("\""))
+                                || (value.StartsWith("'") && value.EndsWith("'")))
+                            {
+                                value = value.Substring(1, value.Length - 2);
+                            }
+                            Properties[key] = value;
                         }
-                        catch { }
+                        catch
+                        {
+                            Log.Error("IniFile contains an error on line "+i+".");
+                        }
                     }
                 }
             }
-            catch { }
         }
 
     }

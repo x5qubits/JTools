@@ -159,7 +159,7 @@
     <Content Include="JHICON.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JExtensions\JCommon.csproj">
+    <ProjectReference Include="..\JCommon\JCommon.csproj">
       <Project>{8F646345-1E41-47E0-B3E9-91D07F6ED810}</Project>
       <Name>JCommon</Name>
     </ProjectReference>

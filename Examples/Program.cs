@@ -16,7 +16,7 @@ namespace Tests
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SDDownloader());
+            Application.Run(new Main());
         }
     }
 }
