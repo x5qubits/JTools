@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\JTools\Bin\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentNHibernate" Version="2.1.2" />
+    <PackageReference Include="log4net" Version="2.0.7" />
+    <PackageReference Include="MySql.Data" Version="8.0.17" />
+    <PackageReference Include="NHibernate" Version="5.2.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JExtensions\JCommon.csproj" />
+  </ItemGroup>
+
+</Project>

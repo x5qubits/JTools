@@ -1,0 +1,8 @@
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JExtensions.deps.json
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JExtensions.dll
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JExtensions.pdb
+C:\Users\IcyTeck\source\repos\JTools\JExtensions\obj\Debug\netstandard2.0\JExtensions.csproj.CoreCompileInputs.cache
+C:\Users\IcyTeck\source\repos\JTools\JExtensions\obj\Debug\netstandard2.0\JExtensions.AssemblyInfoInputs.cache
+C:\Users\IcyTeck\source\repos\JTools\JExtensions\obj\Debug\netstandard2.0\JExtensions.AssemblyInfo.cs
+C:\Users\IcyTeck\source\repos\JTools\JExtensions\obj\Debug\netstandard2.0\JExtensions.dll
+C:\Users\IcyTeck\source\repos\JTools\JExtensions\obj\Debug\netstandard2.0\JExtensions.pdb

@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCommon", "JExtensions\JCommon.csproj", "{8F646345-1E41-47E0-B3E9-91D07F6ED810}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTcpNetwork", "JTcpNetwork\JTcpNetwork.csproj", "{D2A31C2F-5423-4127-B718-666D38C090A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810} = {8F646345-1E41-47E0-B3E9-91D07F6ED810}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCommonDB", "JCommonDB\JCommonDB.csproj", "{BA0E009C-9E4E-4F43-8F72-139EDC01C575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{D51EB970-372A-4665-959D-1BAF2F6C0B72}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D2A31C2F-5423-4127-B718-666D38C090A7} = {D2A31C2F-5423-4127-B718-666D38C090A7}
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810} = {8F646345-1E41-47E0-B3E9-91D07F6ED810}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertiesEditor", "Examples\GameDataBaseEditor\PropertiesEditor.csproj", "{56750920-1580-491A-9886-2481E38B539B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810} = {8F646345-1E41-47E0-B3E9-91D07F6ED810}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F646345-1E41-47E0-B3E9-91D07F6ED810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A31C2F-5423-4127-B718-666D38C090A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A31C2F-5423-4127-B718-666D38C090A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A31C2F-5423-4127-B718-666D38C090A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A31C2F-5423-4127-B718-666D38C090A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0E009C-9E4E-4F43-8F72-139EDC01C575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0E009C-9E4E-4F43-8F72-139EDC01C575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0E009C-9E4E-4F43-8F72-139EDC01C575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0E009C-9E4E-4F43-8F72-139EDC01C575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51EB970-372A-4665-959D-1BAF2F6C0B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51EB970-372A-4665-959D-1BAF2F6C0B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51EB970-372A-4665-959D-1BAF2F6C0B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51EB970-372A-4665-959D-1BAF2F6C0B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56750920-1580-491A-9886-2481E38B539B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56750920-1580-491A-9886-2481E38B539B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56750920-1580-491A-9886-2481E38B539B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56750920-1580-491A-9886-2481E38B539B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69468CF7-3E80-4A5F-B880-0825D4E6C1D9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56750920-1580-491A-9886-2481E38B539B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PropertiesEditor</RootNamespace>
+    <AssemblyName>PropertiesEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\JTools\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\IcyTeck\AppData\Local\Temp\vs6693.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\IcyTeck\AppData\Local\Temp\vs6693.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JHUI">
+      <HintPath>..\..\..\JHUI\bin\Release\JHUI.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PropertiesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertiesEditor.Designer.cs">
+      <DependentUpon>PropertiesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PropertiesEditor.resx">
+      <DependentUpon>PropertiesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JHICON.ico" />
+    <Content Include="LOGO.ico" />
+    <None Include="Resources\Zoom-out.png" />
+    <None Include="Resources\Zoom-in.png" />
+    <None Include="Resources\Zoom.png" />
+    <None Include="Resources\Yen.png" />
+    <None Include="Resources\Windows-phone.png" />
+    <None Include="Resources\Windows.png" />
+    <None Include="Resources\Wi-fi.png" />
+    <None Include="Resources\Weather-thunder.png" />
+    <None Include="Resources\Weather-sun.png" />
+    <None Include="Resources\Weather-snow.png" />
+    <None Include="Resources\Weather-rain.png" />
+    <None Include="Resources\Weather-overcast.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\View.png" />
+    <None Include="Resources\Video.png" />
+    <None Include="Resources\Up.png" />
+    <None Include="Resources\Undo.png" />
+    <None Include="Resources\Turtle.png" />
+    <None Include="Resources\Turn off.png" />
+    <None Include="Resources\Trash.png" />
+    <None Include="Resources\Tools.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Stop button.png" />
+    <None Include="Resources\Snowflake.png" />
+    <None Include="Resources\Shuffle.png" />
+    <None Include="Resources\Send-message.png" />
+    <None Include="Resources\Send photo.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Save pictures.png" />
+    <None Include="Resources\Save as.png" />
+    <None Include="Resources\Rotate.png" />
+    <None Include="Resources\Right.png" />
+    <None Include="Resources\Ribbon.png" />
+    <None Include="Resources\Resize.png" />
+    <None Include="Resources\Repeat.png" />
+    <None Include="Resources\Remove.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Redo.png" />
+    <None Include="Resources\Recycle bin.png" />
+    <None Include="Resources\Radioactive.png" />
+    <None Include="Resources\Question.png" />
+    <None Include="Resources\Problem.png" />
+    <None Include="Resources\Pound.png" />
+    <None Include="Resources\Play button.png" />
+    <None Include="Resources\Picture.png" />
+    <None Include="Resources\Phone-number.png" />
+    <None Include="Resources\Peace.png" />
+    <None Include="Resources\Pause button.png" />
+    <None Include="Resources\Password.png" />
+    <None Include="Resources\Paperclip.png" />
+    <None Include="Resources\Out.png" />
+    <None Include="Resources\Options.png" />
+    <None Include="Resources\Open file.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\No.png" />
+    <None Include="Resources\No entry.png" />
+    <None Include="Resources\New.png" />
+    <None Include="Resources\Music.png" />
+    <None Include="Resources\Maintenance.png" />
+    <None Include="Resources\Login.png" />
+    <None Include="Resources\Linux.png" />
+    <None Include="Resources\Left.png" />
+    <None Include="Resources\Layout.png" />
+    <None Include="Resources\Layers.png" />
+    <None Include="Resources\Last.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Infinity.png" />
+    <None Include="Resources\Industry.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Google-plus.png" />
+    <None Include="Resources\Go.png" />
+    <None Include="Resources\Gear.png" />
+    <None Include="Resources\Full recycle bin.png" />
+    <None Include="Resources\Frames.png" />
+    <None Include="Resources\Forward-button.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\Folder.png" />
+    <None Include="Resources\Flow-block.png" />
+    <None Include="Resources\First.png" />
+    <None Include="Resources\Find.png" />
+    <None Include="Resources\Exit-button.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Euro.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\Erase.png" />
+    <None Include="Resources\Equipment.png" />
+    <None Include="Resources\Dustbin.png" />
+    <None Include="Resources\Down.png" />
+    <None Include="Resources\Dollar.png" />
+    <None Include="Resources\Dog.png" />
+    <None Include="Resources\Disk-upload.png" />
+    <None Include="Resources\Disk-download.png" />
+    <None Include="Resources\Dice.png" />
+    <None Include="Resources\Diagram.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Cut.png" />
+    <None Include="Resources\Currency.png" />
+    <None Include="Resources\Crosshair.png" />
+    <None Include="Resources\Create.png" />
+    <None Include="Resources\Cow.png" />
+    <None Include="Resources\Copyright.png" />
+    <None Include="Resources\Configuration.png" />
+    <None Include="Resources\Cone.png" />
+    <None Include="Resources\Cloud-upload.png" />
+    <None Include="Resources\Cloud-sync.png" />
+    <None Include="Resources\Cloud-refresh.png" />
+    <None Include="Resources\Cloud-download.png" />
+    <None Include="Resources\Cloud-delete.png" />
+    <None Include="Resources\Cloud-add.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Clipboard-file.png" />
+    <None Include="Resources\Clipboard.png" />
+    <None Include="Resources\Clear.png" />
+    <None Include="Resources\Check boxes.png" />
+    <None Include="Resources\Cat.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Camera.png" />
+    <None Include="Resources\Buddy.png" />
+    <None Include="Resources\Briefcase.png" />
+    <None Include="Resources\Boxplot.png" />
+    <None Include="Resources\Bluetooth.png" />
+    <None Include="Resources\Bird.png" />
+    <None Include="Resources\Backward.png" />
+    <None Include="Resources\Back-button.png" />
+    <None Include="Resources\Apply.png" />
+    <None Include="Resources\Apple.png" />
+    <None Include="Resources\Android.png" />
+    <None Include="Resources\Align-right.png" />
+    <None Include="Resources\Align-left.png" />
+    <None Include="Resources\Align-justify.png" />
+    <None Include="Resources\Align-center.png" />
+    <None Include="Resources\Alien.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\AC.png" />
+    <None Include="Resources\Abort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\JExtensions\JCommon.csproj">
+      <Project>{8F646345-1E41-47E0-B3E9-91D07F6ED810}</Project>
+      <Name>JCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

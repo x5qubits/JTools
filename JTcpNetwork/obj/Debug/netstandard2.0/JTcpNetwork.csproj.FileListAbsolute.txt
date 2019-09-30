@@ -1,0 +1,10 @@
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JTcpNetwork.deps.json
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JTcpNetwork.dll
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JTcpNetwork.pdb
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.csproj.CoreCompileInputs.cache
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.AssemblyInfoInputs.cache
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.AssemblyInfo.cs
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.dll
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.pdb
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.csproj.CopyComplete
+C:\Users\IcyTeck\source\repos\JTools\JTcpNetwork\obj\Debug\netstandard2.0\JTcpNetwork.csprojAssemblyReference.cache

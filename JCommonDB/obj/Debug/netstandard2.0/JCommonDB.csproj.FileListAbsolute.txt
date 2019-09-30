@@ -1,0 +1,10 @@
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JCommonDB.deps.json
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JCommonDB.dll
+C:\Users\IcyTeck\source\repos\JTools\JTools\Bin\netstandard2.0\JCommonDB.pdb
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.csproj.CoreCompileInputs.cache
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.AssemblyInfoInputs.cache
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.AssemblyInfo.cs
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.csproj.CopyComplete
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.dll
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.pdb
+C:\Users\IcyTeck\source\repos\JTools\JCommonDB\obj\Debug\netstandard2.0\JCommonDB.csprojAssemblyReference.cache
