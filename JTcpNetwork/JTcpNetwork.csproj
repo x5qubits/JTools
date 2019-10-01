@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JExtensions\JCommon.csproj" />
+    <ProjectReference Include="..\JCommon\JCommon.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,12 +9,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentNHibernate" Version="2.1.2" />
-    <PackageReference Include="log4net" Version="2.0.7" />
     <PackageReference Include="MySql.Data" Version="8.0.17" />
-    <PackageReference Include="NHibernate" Version="5.2.5" />
+    <PackageReference Include="NHibernate" Version="5.2.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JExtensions\JCommon.csproj" />
+    <ProjectReference Include="..\JCommon\JCommon.csproj" />
   </ItemGroup>
 
 </Project>
