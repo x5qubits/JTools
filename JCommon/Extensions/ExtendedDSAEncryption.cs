@@ -30,6 +30,25 @@ namespace JCommon.Extensions
                 return Encoding.Unicode.GetString(outputBuffer);
             }
         }
+
+
+        public static byte[] BytesToDSA(this byte[] inputbuffer)
+        {
+            using (SymmetricAlgorithm algorithm = DES.Create())
+            {
+                ICryptoTransform transform = algorithm.CreateEncryptor(key, iv);
+                return transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
+            }
+        }
+
+        public static byte[] DSAToBytes(this byte[] inputbuffer)
+        {
+            using (SymmetricAlgorithm algorithm = DES.Create())
+            {
+                ICryptoTransform transform = algorithm.CreateDecryptor(key, iv);
+                return transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
+            }
+        }
     }
 
 }

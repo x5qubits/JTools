@@ -1,4 +1,5 @@
-﻿using JCommon.FileDatabase.IO;
+﻿using JCommon.Extensions;
+using JCommon.FileDatabase.IO;
 using System.IO;
 
 namespace JCommon.FileDatabase
@@ -28,22 +29,22 @@ namespace JCommon.FileDatabase
             }
         }
 
-        public static TMsg ReadFile<TMsg>(string path) where TMsg : DataFile, new()
+        public static TMsg ReadFile<TMsg>(string path, bool encrypt = false) where TMsg : DataFile, new()
         {
-           return Instance.MReadFile<TMsg>(path);
+            return Instance.MReadFile<TMsg>(path, encrypt);
         }
 
-        public static void WriteFile(string path, DataFile msg)
+        public static void WriteFile(string path, DataFile msg, bool encrypt = false)
         {
-            Instance.MWriteFile(path, msg);
+            Instance.MWriteFile(path, msg, encrypt);
         }
 
-        public static void WriteFile(DataFile msg)
+        public static void WriteFile(DataFile msg, bool encrypt = false)
         {
-            WriteFile(msg.Path, msg);
+            WriteFile(msg.Path, msg, encrypt);
         }
 
-        public TMsg MReadFile<TMsg>(string path) where TMsg : DataFile, new()
+        private TMsg MReadFile<TMsg>(string path, bool encrypt) where TMsg : DataFile, new()
         {
             if (File.Exists(path))
             {
@@ -51,19 +52,33 @@ namespace JCommon.FileDatabase
                 {
                     Path = path
                 };
-                var reader = new DataReader(File.ReadAllBytes(path));
-                msg.Deserialize(reader);                
+                byte[] data = File.ReadAllBytes(path);
+
+                if (encrypt)
+                {
+                    data = data.DSAToBytes();
+                }
+
+                var reader = new DataReader(data);
+                msg.Deserialize(reader);
                 return msg;
             }
             return null;
         }
 
-        public void MWriteFile(string path, DataFile msg)
+        private void MWriteFile(string path, DataFile msg, bool encrypt)
         {
             msg.Path = path;
             DataWriter writer = new DataWriter();
             msg.Serialize(writer);
-            File.WriteAllBytes(msg.Path, writer.ToArray());
+            byte[] data = writer.ToArray();
+
+            if (encrypt)
+            {
+                data = data.BytesToDSA();
+            }
+
+            File.WriteAllBytes(msg.Path, data);
         }
 
     }
