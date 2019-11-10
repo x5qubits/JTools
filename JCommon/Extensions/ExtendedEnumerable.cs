@@ -6,6 +6,7 @@ namespace JCommon.Extensions
 {
     public static class ExtendedEnumerable
     {
+#if NO_LINQ
         public static void ForEach<T>(this IEnumerable<T> collection, Action<T> action)
         {
             if (null == collection)
@@ -271,5 +272,6 @@ namespace JCommon.Extensions
             }
             return result;
         }
+#endif
     }
 }

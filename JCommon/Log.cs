@@ -91,7 +91,16 @@ namespace JCommon
                 Error("Please call Initialize first - Starting with default path : " + CfgPath);
             }
             lock (writequeue)
-                writequeue.Enqueue(Time.UtcNowFormated + " - [" + type + "] - [" + Path.GetFileNameWithoutExtension(path) + "][" + lineNo + "][" + caller + "] - " + msg);
+            {
+                string pathx = path;
+                if(path.Contains("\\"))
+                {
+                    string[] sp = path.Split('\\');
+
+                    pathx = sp[sp.Length-1];
+                }
+                writequeue.Enqueue(Time.UtcNowFormated + " - [" + type + "] - [" + Path.GetFileNameWithoutExtension(pathx) + "][" + lineNo + "][" + caller + "] - " + msg);
+            }
         }
 
         internal void Execute()

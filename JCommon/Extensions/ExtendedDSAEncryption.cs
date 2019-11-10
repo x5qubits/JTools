@@ -31,6 +31,15 @@ namespace JCommon.Extensions
             }
         }
 
+        public static string ToBase64(this string text)
+        {
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
+        }
+
+        public static string FromBase64(this string text)
+        {
+            return Encoding.UTF8.GetString(Convert.FromBase64String(text));
+        }
 
         public static byte[] BytesToDSA(this byte[] inputbuffer)
         {

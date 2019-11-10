@@ -1,10 +1,20 @@
-﻿namespace JCommon.Extensions
+﻿using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace JCommon.Extensions
 {
     public static class ExtendedConvertor
     {
         public static int ToInt32(this string str, int def = 0)
         {
             if (!int.TryParse(str, out int temp))
+                return def;
+
+            return temp;
+        }
+        public static long ToInt64(this string str, long def = 0)
+        {
+            if (!long.TryParse(str, out long temp))
                 return def;
 
             return temp;
@@ -46,6 +56,14 @@
                 return def;
 
             return temp;
+        }
+        public static int GetInteger(this string input)
+        {
+           return Regex.Replace(input, "[^0-9]", "").ToInt32(-1);
+        }
+        public static long GetBigInteger(this string input)
+        {
+            return Regex.Replace(input, "[^0-9]", "").ToInt64(-1);
         }
     }
 }
