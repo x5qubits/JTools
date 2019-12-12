@@ -23,6 +23,19 @@ namespace JCommon
             AddRange(obj);
         }
 
+
+        /// <summary>
+        /// Reset index to 0
+        /// </summary>
+        public void Reset()
+        {
+            Index = -1;
+        }
+
+        /// <summary>
+        /// Returns the next element
+        /// </summary>
+        /// <returns></returns>
         public T GetNext()
         {
             if (Count == 0)
@@ -41,7 +54,11 @@ namespace JCommon
                 return v;
             }
         }
-
+        
+        /// <summary>
+        /// Returns the last element
+        /// </summary>
+        /// <returns></returns>
         public T GetLast()
         {
             if (Count == 0)
@@ -60,6 +77,10 @@ namespace JCommon
             
         }
 
+        /// <summary>
+        /// Returns the first element
+        /// </summary>
+        /// <returns></returns>
         public T First()
         {
             if (Count == 0)
@@ -68,6 +89,10 @@ namespace JCommon
             return base[0];
         }
 
+        /// <summary>
+        /// Get last element
+        /// </summary>
+        /// <returns></returns>
         public T Last()
         {
             if (Count == 0)
@@ -76,6 +101,10 @@ namespace JCommon
             return base[Count - 1];
         }
 
+        /// <summary>
+        /// Returns the last element in array or the last one after next was called
+        /// </summary>
+        /// <returns></returns>
         public T GetPreviews()
         {
             if (Count == 0)

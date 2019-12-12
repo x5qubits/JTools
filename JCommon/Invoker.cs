@@ -42,12 +42,16 @@ namespace JCommon
             SetTicksPerSecond();
             new Thread(new ThreadStart(Update)).Start();
         }
-
+        float lastUpdate = 0;
         void Update()
         {
             while (true)
             {
-                Thread.Sleep(RunEveryMS);
+                // Thread.Sleep(RunEveryMS);
+                if (lastUpdate > Time.time)
+                    return;
+
+                lastUpdate = Time.time + RunEveryMS;
                 lock (Tasks)
                 {
                     List<InvokerTask> Recycle = new List<InvokerTask>();
