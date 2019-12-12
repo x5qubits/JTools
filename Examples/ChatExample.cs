@@ -150,7 +150,7 @@ namespace Tests
             {
                 if(!msg.ValidLength(1, 100))
                 {
-                    richTextBox1.AppendText("Message lenght must be minimum 1 and maximum 100 characters.\n");
+                    richTextBox1.AppendText("Message length must be minimum 1 and maximum 100 characters.\n");
                     return;
                 }
                 NetworkClient.Send(100, new ChatMsgPacket() { Msg = msg });
