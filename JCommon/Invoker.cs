@@ -14,10 +14,11 @@ namespace JCommon
 
     public class Invoker
     {
-        int RunEveryMS = 16;
+        int RunEveryMS = 1000 / 5;
         private static object s_Sync = new object();
         static volatile Invoker s_Instance;
         Queue<InvokerTask> Tasks = new Queue<InvokerTask>();
+        AutoResetEvent evt = new AutoResetEvent(false);
         public static Invoker Instance
         {
             get
@@ -39,19 +40,13 @@ namespace JCommon
 
         void Init()
         {
-            SetTicksPerSecond();
             new Thread(new ThreadStart(Update)).Start();
         }
-        float lastUpdate = 0;
+
         void Update()
         {
-            while (true)
-            {
-                // Thread.Sleep(RunEveryMS);
-                if (lastUpdate > Time.time)
-                    return;
-
-                lastUpdate = Time.time + RunEveryMS;
+            LOOP:
+                evt.WaitOne(RunEveryMS);
                 lock (Tasks)
                 {
                     List<InvokerTask> Recycle = new List<InvokerTask>();
@@ -82,7 +77,7 @@ namespace JCommon
                     }
                     Tasks = new Queue<InvokerTask>(Recycle);
                 }
-            }
+            goto LOOP;
         }
 
         internal void _InvokeWithDelay(Action Method, float TickRate)
@@ -137,7 +132,7 @@ namespace JCommon
         /// Like in games this function will set a tick rate eg. 30 equals 30 Frames per second in this case LateInvoker will try its best to execute all functions 30 times per second.
         /// </summary>
         /// <param name="Ticks"></param>
-        public static void SetTicksPerSecond(int Ticks = 30)
+        public static void SetTicksPerSecond(int Ticks = 5)
         {
             Instance.RunEveryMS = 1000 / Ticks;
         }
